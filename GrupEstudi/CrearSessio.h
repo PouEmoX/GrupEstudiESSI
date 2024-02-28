@@ -182,29 +182,6 @@ namespace GrupEstudi {
 		Database^ db = gcnew Database();
 		db->pushDB(myGrup);
 		
-		/*
-		// Define la consulta SQL para obtener la información del grupo
-		String^ query = "SELECT * FROM sesiones WHERE tema = 'GEP'"; //Consulta genérica que da como resultado una única fila, en cualquier caso la función pullDB() da error si el resultado es de más de una o ninguna fila
-
-		// Llama a la función pullDB para obtener el grupo
-		Grup^ grupo = db->pullDB(query);
-
-		if (grupo != nullptr) {
-			// Construye el mensaje con la información del grupo
-			String^ mensaje = "Estudiante: " + grupo->getEstudianteCreador() + "\n" +
-				"Tema: " + grupo->getTema() + "\n" +
-				"Día: " + grupo->getDia() + "\n" +
-				"Hora: " + grupo->getHora();
-
-			// Muestra el mensaje en una ventana de mensaje
-			MessageBox::Show(mensaje, "Información del Grupo", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		else {
-			// Muestra un mensaje si no se pudo obtener la información del grupo
-			MessageBox::Show("No se pudo obtener la información del grupo.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-		*/
-		
 		// Vaciar los campos de texto después de insertar el grupo
 		txt_tema->Text = "";
 		txt_dia->Text = "";

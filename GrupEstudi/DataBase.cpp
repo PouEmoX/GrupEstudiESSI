@@ -1,10 +1,37 @@
 #include "pch.h"
 #include "DataBase.h"
 
+#include<fstream>
+#include <vcclr.h>
+
 Database::Database() {
+    
     // Inicializar la cadena de conexión
-    connectionString = "datasource=b99cavshzhle8qpp4gyr-mysql.services.clever-cloud.com; username=udn12yk88ro4ih7a; password=\"s3ANuNU2Igs1LndsQN4U\"; database=b99cavshzhle8qpp4gyr;";
-    conn = gcnew MySqlConnection(connectionString);
+    String^ connection = "";
+
+        ifstream config;
+        String^ configPath = "..\\config.txt";
+
+        config.open("C:\\Uni\\Soporte ESSI\\GrupEstudi\\config.txt", ios::in);
+
+        if (config.fail()) {
+            MessageBox::Show("Imposible acceder a la información de la base de datos");
+        }
+        else {
+            while (!config.eof()) {
+                string line;
+                getline(config, line);
+
+                // Convertir std::string a String^
+                String^ managedString = gcnew String(line.c_str());
+
+                connection = String::Concat(connection, managedString);
+            }
+            config.close();
+        }
+    
+        connectionString = connection;
+        conn = gcnew MySqlConnection(connectionString);
 }
 
 int filasSesiones(MySqlConnection^ conn) {
@@ -53,7 +80,7 @@ Grup^ Database::pullDB(String^ query) {
 
         if (dataReader->Read()) {
             // Crear un objeto Grup con los datos obtenidos de la consulta
-            String^ estudiante = dataReader->GetString(1); // Empezamos en 1 porque la primera columna es el id
+            String^ estudiante = dataReader->GetString(1); // Empezamos en 1 porque la columna 0 es el id
             String^ tema = dataReader->GetString(2);       
             DateTime dia = dataReader->GetDateTime(3);
             String^ diaString = dia.ToString("yyyy-MM-dd");

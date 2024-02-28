@@ -1,4 +1,6 @@
 #pragma once
+#include<fstream>
+#include <vcclr.h>
 
 #include "Inicio.h"
 
@@ -18,8 +20,37 @@ namespace CppCLRWinFormsProject {
 	/// </summary>
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
-	//private:
-		//String^ username;
+	
+	private:
+		String^ connection = "";
+		MySqlConnection^ conn; // Declare pero no inicialices aquí
+
+		void LoadConfig() {
+			ifstream config;
+			String^ configPath = "..\\config.txt";
+
+			config.open("C:\\Uni\\Soporte ESSI\\GrupEstudi\\config.txt", ios::in);
+
+			if (config.fail()) {
+				MessageBox::Show("Imposible acceder a la información de la base de datos");
+			}
+			else {
+				while (!config.eof()) {
+					string line;
+					getline(config, line);
+
+					// Convertir std::string a String^
+					String^ managedString = gcnew String(line.c_str());
+
+					connection = String::Concat(connection, managedString);
+				}
+				config.close();
+			}
+
+			conn = gcnew MySqlConnection(connection); // Inicializa conn después de cargar la conexión
+		}
+
+		
 	public:
 		Form1(void)
 		{
@@ -27,6 +58,7 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
+			LoadConfig();
 		}
 
 	protected:
@@ -40,8 +72,6 @@ namespace CppCLRWinFormsProject {
 				delete components;
 			}
 		}
-	private: String^ connectionString = "datasource=b99cavshzhle8qpp4gyr-mysql.services.clever-cloud.com; username=udn12yk88ro4ih7a; password=\"s3ANuNU2Igs1LndsQN4U\"; database=b99cavshzhle8qpp4gyr;";
-	private: MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ txt_nombre;
 	private: System::Windows::Forms::TextBox^ txt_contra;
