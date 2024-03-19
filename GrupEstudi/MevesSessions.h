@@ -52,7 +52,7 @@ namespace GrupEstudi {
 				delete components;
 			}
 		}
-	private: String^ connectionString = "datasource=b99cavshzhle8qpp4gyr-mysql.services.clever-cloud.com; username=udn12yk88ro4ih7a; password=\"s3ANuNU2Igs1LndsQN4U\"; database=b99cavshzhle8qpp4gyr;";
+	private: String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username=amep00; password=\"aePeph3Ahmi4-\"; database=amep00;";
 	private: MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;

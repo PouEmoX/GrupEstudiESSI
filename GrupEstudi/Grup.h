@@ -16,7 +16,6 @@ private:
     System::String^ hora;
 
 public:
-    // Constructor
     Grup(System::String^ estudiante, System::String^ tema, System::String^ dia, System::String^ hora);
 
 
