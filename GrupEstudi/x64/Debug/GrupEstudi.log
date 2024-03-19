@@ -1,5 +1,4 @@
-﻿  pch.cpp
-  AssemblyInfo.cpp
+﻿  AssemblyInfo.cpp
   CLR.cpp
   CppCLR_WinFormsProject.cpp
   CrearSessio.cpp
@@ -9,7 +8,6 @@
   Inicio.cpp
   MevesSessions.cpp
   Generando código...
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   GrupEstudi.vcxproj -> C:\Uni\Soporte ESSI\GrupEstudi_V2\x64\Debug\GrupEstudi.exe
   "pwsh.exe" no se reconoce como un comando interno o externo,
