@@ -29,7 +29,7 @@ namespace CppCLRWinFormsProject {
 			ifstream config;
 			String^ configPath = "..\\config.txt";
 
-			config.open("C:\\Uni\\Soporte ESSI\\GrupEstudi\\config.txt", ios::in);
+			config.open("C:\\Uni\\Soporte ESSI\\GrupEstudi_V2\\config.txt", ios::in);
 
 			if (config.fail()) {
 				MessageBox::Show("Imposible acceder a la información de la base de datos");
@@ -55,16 +55,10 @@ namespace CppCLRWinFormsProject {
 		Form1(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 			LoadConfig();
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		~Form1()
 		{
 			if (components)
@@ -213,6 +207,10 @@ namespace CppCLRWinFormsProject {
 	private: System::Void btn_exit_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::Exit();
 	}
+
+//	private: String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username=amep00; password=\"aePeph3Ahmi4-\"; database=amep00;";
+//	private: MySqlConnection^ connec = gcnew MySqlConnection(connectionString);
+
 	private: System::Void btn_login_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ sql = "select * from estudiantes where Nombre = '" + txt_nombre->Text + "' and Contra = '" + txt_contra->Text + "'";
 		MySqlCommand^ cursor = gcnew MySqlCommand(sql, conn);
