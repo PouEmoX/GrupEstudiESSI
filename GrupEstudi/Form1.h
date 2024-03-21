@@ -208,9 +208,6 @@ namespace CppCLRWinFormsProject {
 		Application::Exit();
 	}
 
-//	private: String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username=amep00; password=\"aePeph3Ahmi4-\"; database=amep00;";
-//	private: MySqlConnection^ connec = gcnew MySqlConnection(connectionString);
-
 	private: System::Void btn_login_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ sql = "select * from estudiantes where Nombre = '" + txt_nombre->Text + "' and Contra = '" + txt_contra->Text + "'";
 		MySqlCommand^ cursor = gcnew MySqlCommand(sql, conn);
