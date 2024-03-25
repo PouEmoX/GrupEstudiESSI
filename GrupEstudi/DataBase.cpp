@@ -12,7 +12,7 @@ Database::Database() {
         ifstream config;
         String^ configPath = "..\\config.txt";
 
-        config.open("C:\\Uni\\Soporte ESSI\\GrupEstudi_V2\\config.txt", ios::in);
+        config.open("..\\config.txt", ios::in);
 
         if (config.fail()) {
             MessageBox::Show("Imposible acceder a la información de la base de datos");

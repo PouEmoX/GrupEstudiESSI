@@ -1,10 +1,4 @@
-﻿  AssemblyInfo.cpp
-  CLR.cpp
-  CppCLR_WinFormsProject.cpp
-  CrearSessio.cpp
-  DataBase.cpp
-  Form1.cpp
-  Grup.cpp
+﻿  CppCLR_WinFormsProject.cpp
   Inicio.cpp
   MevesSessions.cpp
   Generando código...

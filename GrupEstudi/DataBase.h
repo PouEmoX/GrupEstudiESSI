@@ -12,12 +12,12 @@ using namespace MySql::Data::MySqlClient;
 ref class Database
 {
 protected:
-private: String^ connectionString;
-private: MySqlConnection^ conn;
 
 private:
 
 public:
+    String^ connectionString;
+    MySqlConnection^ conn;
     // Constructor
     Database();
 

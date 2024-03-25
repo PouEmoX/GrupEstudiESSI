@@ -1,4 +1,5 @@
 #pragma once
+#include "DataBase.h"
 
 namespace GrupEstudi {
 
@@ -16,11 +17,15 @@ namespace GrupEstudi {
 	/// </summary>
 	public ref class MevesSessions : public System::Windows::Forms::Form
 	{
+	private:
+		Database^ database;
+
 	public:
 		MevesSessions(void)
 		{
 			InitializeComponent();
 			dataGridView1->CellClick += gcnew DataGridViewCellEventHandler(this, &MevesSessions::DataGridView_CellClick);
+			database = gcnew Database();
 			CargarDatos();
 			//
 			//TODO: agregar código de constructor aquí
@@ -52,8 +57,8 @@ namespace GrupEstudi {
 				delete components;
 			}
 		}
-	private: String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username=amep00; password=\"aePeph3Ahmi4-\"; database=amep00;";
-	private: MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+	//private: String^ connectionString = "datasource=ubiwan.epsevg.upc.edu; username=amep00; password=\"aePeph3Ahmi4-\"; database=amep00;";
+	//private: MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -134,7 +139,7 @@ namespace GrupEstudi {
 			{
 				// No es necesario abrir la conexión aquí, ya que se abre antes de llamar a este método
 
-				MySqlCommand^ cmd = gcnew MySqlCommand("SELECT * FROM sesiones where nombre_estudiante = 'Pablo'", conn);
+				MySqlCommand^ cmd = gcnew MySqlCommand("SELECT * FROM sesiones where nombre_estudiante = 'Pablo'", database->conn);
 				MySqlDataAdapter^ adapter = gcnew MySqlDataAdapter(cmd);
 				DataTable^ dataTable = gcnew DataTable();
 				adapter->Fill(dataTable);
@@ -156,11 +161,11 @@ namespace GrupEstudi {
 
 				try
 				{
-					conn->Open();
+					database->conn->Open();
 
 					// Crear y ejecutar la consulta para eliminar el elemento seleccionado
 					String^ query = "DELETE FROM sesiones WHERE Id = @grupoId"; // Reemplaza "Id" por el nombre real de la columna que contiene el ID del grupo de estudio
-					MySqlCommand^ cmd = gcnew MySqlCommand(query, conn);
+					MySqlCommand^ cmd = gcnew MySqlCommand(query, database->conn);
 					cmd->Parameters->AddWithValue("@grupoId", grupoId);
 					cmd->ExecuteNonQuery();
 				}
@@ -170,7 +175,7 @@ namespace GrupEstudi {
 				}
 				finally
 				{
-					conn->Close();
+					database->conn->Close();
 				}
 
 				// Actualizar los datos en el DataGridView
