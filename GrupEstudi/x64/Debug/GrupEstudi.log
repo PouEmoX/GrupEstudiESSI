@@ -1,8 +1,1 @@
-﻿  CppCLR_WinFormsProject.cpp
-  Inicio.cpp
-  MevesSessions.cpp
-  Generando código...
-  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  GrupEstudi.vcxproj -> C:\Uni\Soporte ESSI\GrupEstudi_V2\x64\Debug\GrupEstudi.exe
-  "pwsh.exe" no se reconoce como un comando interno o externo,
-  programa o archivo por lotes ejecutable.
+﻿  GrupEstudi.vcxproj -> C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\x64\Debug\GrupEstudi.exe
