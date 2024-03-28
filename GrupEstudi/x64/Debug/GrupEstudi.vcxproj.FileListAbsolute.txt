@@ -14,3 +14,11 @@ C:\Uni\Soporte ESSI\GrupEstudi_V2\GrupEstudi\x64\Debug\GrupEstudi.Inicio.resourc
 C:\Uni\Soporte ESSI\GrupEstudi_V2\GrupEstudi\x64\Debug\GrupEstudi.MevesSessions.resources
 C:\Uni\Soporte ESSI\GrupEstudi_V2\GrupEstudi\x64\Debug\GrupEstudi.vcxproj.GenerateResource.cache
 C:\Uni\Soporte ESSI\GrupEstudi_V2\GrupEstudi\x64\Debug\GrupEstudi.vcxproj.CopyComplete
+C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\GrupEstudi\x64\Debug\GrupEstudi.vcxproj.AssemblyReference.cache
+C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\GrupEstudi\x64\Debug\GrupEstudi.CLR.resources
+C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\GrupEstudi\x64\Debug\GrupEstudi.CrearSessio.resources
+C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\GrupEstudi\x64\Debug\GrupEstudi.Form1.resources
+C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\GrupEstudi\x64\Debug\GrupEstudi.Inicio.resources
+C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\GrupEstudi\x64\Debug\GrupEstudi.MevesSessions.resources
+C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\GrupEstudi\x64\Debug\GrupEstudi.vcxproj.GenerateResource.cache
+C:\Uni\Soporte ESSI\GrupEstudiRepo\GrupEstudiESSI\GrupEstudi\x64\Debug\GrupEstu.911308C0.Up2Date

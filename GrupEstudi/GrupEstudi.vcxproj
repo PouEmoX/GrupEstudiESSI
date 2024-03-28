@@ -140,6 +140,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DataBase.h" />
+    <ClInclude Include="Estudiante.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -159,6 +160,7 @@
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CrearSessio.cpp" />
     <ClCompile Include="DataBase.cpp" />
+    <ClCompile Include="Estudiante.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="Grup.cpp" />
     <ClCompile Include="Inicio.cpp" />
